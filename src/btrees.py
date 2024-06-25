@@ -62,7 +62,32 @@ class BinaryTree:
         right_search = self.search_tree(node.right, value)
         if right_search:
             return True
-        
+
+def find_min(self, node):
+    if node is None:
+        return "tree empty"
+    curr_min = node.value
+    left_min = self.find_min(node.left)
+    if left_min < curr_min:
+        curr_min = left_min
+    right_min = self.find_min(node.right)
+    if right_min < curr_min:
+        curr_min = right_min
+    return curr_min
+
+def find_max(self, node):
+    if node is None:
+        return "tree empty"
+    curr_max = node.value
+    left_max = self.find_max(node.left)
+    if left_max > curr_max:
+        curr_max = left_max
+    right_max = self.find_max(node.right)
+    if right_max > curr_max:
+        curr_max = right_max
+    return curr_max
+
+
 tree = BinaryTree()
 tree.insert(0)
 tree.insert(1)
